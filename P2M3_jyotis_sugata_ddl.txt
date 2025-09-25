@@ -1,0 +1,77 @@
+===========================================
+PREFACE
+===========================================
+This program is aims to create tables and insert the dataset into a PostgreSQL database.
+
+
+===========================================
+URL DATASET
+===========================================
+Dataset URL: https://www.kaggle.com/datasets/vishakhdapat/price-of-used-toyota-corolla-cars/data
+
+===========================================
+Data Definition Language Syntax
+===========================================
+Defines the structure of the `table_m3`, specifying columns, data types, and constraints using `CREATE TABLE`.
+
+CREATE TABLE table_m3 (
+    Id INT PRIMARY KEY,
+    Model VARCHAR(255),
+    Price INT,
+    Age_08_04 INT,
+    Mfg_Month INT,
+    Mfg_Year INT,
+    KM INT,
+    Fuel_Type VARCHAR(50),
+    HP INT,
+    Met_Color INT,
+    Color VARCHAR(50),
+    Automatic INT,
+    CC INT,
+    Doors INT,
+    Cylinders INT,
+    Gears INT,
+    Quarterly_Tax INT,
+    Weight INT,
+    Mfr_Guarantee INT,
+    BOVAG_Guarantee INT,
+    Guarantee_Period INT,
+    ABS INT,
+    Airbag_1 INT,
+    Airbag_2 INT,
+    Airco INT,
+    Automatic_airco INT,
+    Boardcomputer INT,
+    CD_Player INT,
+    Central_Lock INT,
+    Powered_Windows INT,
+    Power_Steering INT,
+    Radio INT,
+    Mistlamps INT,
+    Sport_Model INT,
+    Backseat_Divider INT,
+    Metallic_Rim INT,
+    Radio_cassette INT,
+    Parking_Assistant INT,
+    Tow_Bar INT
+);
+
+===========================================
+Data Manipulation Language Syntax
+===========================================
+Inserts data from a CSV file into the `table_m3` using `COPY`.
+
+COPY table_m3(
+    Id, Model, Price, Age_08_04, Mfg_Month, Mfg_Year, KM, Fuel_Type, HP,
+    Met_Color, Color, Automatic, CC, Doors, Cylinders, Gears, Quarterly_Tax,
+    Weight, Mfr_Guarantee, BOVAG_Guarantee, Guarantee_Period, ABS, Airbag_1,
+    Airbag_2, Airco, Automatic_airco, Boardcomputer, CD_Player, Central_Lock,
+    Powered_Windows, Power_Steering, Radio, Mistlamps, Sport_Model,
+    Backseat_Divider, Metallic_Rim, Radio_cassette, Parking_Assistant, Tow_Bar
+)
+FROM '/tmp/P2M3_jyotis_sugata_data_raw.csv'
+WITH (
+    FORMAT csv,
+    HEADER true,
+    DELIMITER ','
+);
