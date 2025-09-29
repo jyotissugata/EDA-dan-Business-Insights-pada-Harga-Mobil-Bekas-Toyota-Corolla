@@ -1,0 +1,57 @@
+Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+
+NoSQL adalah jenis sistem manajemen database yang tidak hanya mengandalkan model relasional (tabel, kolom, baris) seperti pada SQL. NoSQL lebih fleksibel karena bisa menyimpan data dalam berbagai bentuk: JSON, key-value, graph, atau wide-column.
+
+Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+
+Gunakan NoSQL ketika:
+- Data tidak terstruktur atau semi-terstruktur (misalnya JSON, key-value, graph, atau wide-column).
+- Aplikasi butuh scaling cepat dengan volume data yang besar (big data, real-time analytics).
+- Skema data sering berubah, sehingga butuh fleksibilitas tinggi.
+- Contoh kasus: aplikasi e-commerce (menyimpan katalog produk yang berbeda-beda), aplikasi media sosial.
+
+Gunakan RDBMS ketika:
+- Data terstruktur dengan baik dan relasi antar tabel kuat.
+- Dibutuhkan ACID transaction (atomicity, consistency, isolation, durability), misalnya untuk sistem - keuangan atau inventory.
+- Query kompleks dengan JOIN antar banyak tabel.
+- Contoh kasus: sistem perbankan, HR management, sistem akuntansi.
+
+Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+
+MongoDB (Document-based NoSQL)
+- Menyimpan data dalam format JSON-like (BSON).
+- Skema fleksibel, mudah untuk aplikasi modern.
+- Cocok untuk aplikasi web yang butuh perubahan cepat.
+- Kelebihan: scalable, mendukung query yang kaya, integrasi luas dengan banyak bahasa pemrograman.
+
+Cassandra (Wide-column NoSQL)
+- Dikembangkan oleh Facebook, sekarang open-source (Apache Cassandra).
+- Cocok untuk data dengan volume besar dan butuh availability tinggi.
+- Kelebihan: high availability, fault-tolerance, scalable secara horizontal, banyak digunakan oleh perusahaan besar (Netflix, Instagram).
+
+Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+
+Apache Airflow adalah sebuah orchestration tool untuk mengatur alur kerja (workflow) data.
+Workflow didefinisikan sebagai DAG (Directed Acyclic Graph), yaitu serangkaian task yang punya urutan tertentu.
+Berguna untuk menjadwalkan, mengatur dependensi, dan memonitor data pipeline.
+
+Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+
+Great Expectations adalah framework open-source untuk data quality.
+- Tujuan utamanya adalah memvalidasi, mendokumentasikan, dan memonitor data.
+- Dengan Great Expectations, kita bisa membuat “expectations” atau aturan tentang data, misalnya:
+    - Kolom email harus berisi format email valid.
+    - Nilai price tidak boleh negatif.
+    - Tidak boleh ada duplikasi di customer_id.
+- Hasil validasi bisa dijadikan laporan otomatis.
+- Bermanfaat agar data yang dipakai di analisis atau machine learning tetap terpercaya dan konsisten.
+
+Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+
+Definisi: Batch processing adalah teknik pemrosesan data dalam jumlah besar secara periodik (sekali jalan untuk satu kumpulan data), bukan real-time. Biasanya dipakai ketika data dikumpulkan terlebih dahulu, lalu diproses bersama-sama.
+Contoh kasus penggunaan:
+- Proses billing pelanggan bulanan.
+- Menghitung laporan keuangan harian.
+- Analisis data log setiap malam (misalnya log server).
+Tools yang biasa dipakai:
+- Airflow → sebagai orchestration batch pipeline.
